@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+
+<!-- {% block nav_right %}
+<li><a href="{% url 'login' %}" class="btn btn-outline-light">Login</a></li>
+{% endblock %} -->
+
+{% block body %}
+	<div class="card mx-auto" style="width: 18rem;">
+		<div class="card-header">
+      <img class="card-img-top" src="{% static "images/kjsieit-logo.svg" %}" alt="Card image cap">
+      <p></p>
+		<h4>Edit Product Info</h4>
+    <h2> <h2>  <!-- add product id or name of the instance -->
+		</div>
+		<div class="card-body">
+        <form enctype="multipart/form-data" method="POST" novalidate>
+          {% csrf_token %}
+					{{ product_form.as_p }}
+          <input type="submit" value="Add Item" class="btn btn-primary" />
+        </form>
+			</div>
+		</div>
+{% endblock %}

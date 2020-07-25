@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block body %}
+	<div class="card mx-auto" style="width: 40rem;">
+		<div class="card-header">
+      <img class="card-img-top" src="{% static 'images/kjsieit-logo.svg' %}" alt="Card image cap">
+      <br />
+      <br />
+		<h3>Order ID: {{order.id}} <span style="float: right; font-size: 22px">Prepared: {{order.orderState}}</span></h3>
+			<!-- {% if user.is_staff%}
+				<input type= "checkbox">
+				Prepared
+			{% else %}
+			Prepared: {{order.orderState}}
+			{% endif %}</span></h3> -->
+
+    <h4>₹ {{order.orderTotal}} <span style="float: right"> Payment Status: {{order.paymentStatus}}</span></h4>
+    <p><strong>Date: </strong>{{order.date}}</p>
+		</div>
+		<div class="card-body">
+  {% if existingCart %}
+      <table class="table">
+         <thead>
+           <tr>
+             <th>Item</th>
+             <th>Quantity</th>
+             <th>Cost</th>
+           </tr>
+         </thead>
+         <tbody>
+    {% for cartItem in existingCart %}
+           <tr>
+             <td>{{cartItem.item}}</td>
+             <td>{{cartItem.quantity}}</td>
+             <td>₹ {{cartItem.total}}</td>
+           </tr>
+    {% endfor %}
+          <tr>
+            <td></td>
+            <td><strong>Billing Amount </strong></td>
+            <td>₹ {{order.orderTotal}}</td>
+          </tr>
+          </tbody>
+       </table>
+    {% else %}
+    <h5>No items in Cart</h5>
+    {% endif %}
+			</div>
+		</div>
+{% endblock %}

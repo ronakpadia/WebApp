@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block profile%}
+  <li><a href="{% url 'editProfile' %}" class="btn btn-outline-light">Edit Profile</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <img class="rounded-circle account-img" width="100" height="100" src="/media/{{user.UserProfileInfo.profile_pic}}" style= "display:block; margin-left:auto;margin-right:auto">
+    </div>
+    <div class="col-4">
+      <h1>{{user.first_name}} {{user.last_name}}</h1>
+      <p>
+        {{user.email}}
+      </p>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-7">
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <th scope="row">Name</th>
+              <td>{{user.first_name}} {{user.last_name}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Username</th>
+              <td>{{user.username}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Email</th>
+              <td>{{user.email}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Somaiya ID</th>
+              <td>{{user.UserProfileInfo.somaiya_id}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Date Joined</th>
+              <td>{{user.date_joined}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

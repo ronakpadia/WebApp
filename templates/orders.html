@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block body %}
+
+<div class="card mx-auto" style="width: 50rem;">
+  <div class="card-header">
+    <img class="card-img-top" src="{% static 'images/kjsieit-logo.svg' %}" alt="Card image cap">
+    <p></p>
+  <h4>Orders</h4>
+  </div>
+  <div class="card-body">
+{% if allOrders %}
+    <table class="table">
+       <thead>
+         <tr>
+           <th>ID</th>
+           <th>Payment Status</th>
+           <th>Prepared</th>
+           <th>Total</th>
+           <th>Date</th>
+           <th></th>
+         </tr>
+       </thead>
+       <tbody>
+  {% for order in allOrders %}
+         <tr>
+           <td>{{order.id}}</td>
+           <th>{{order.paymentStatus}}</th>
+           <td>{{order.orderState}}
+             {% if user.is_staff%}
+              <a href="/editOrder/{{ order.id }}/" class="btn btn-link">Update</a>
+             {% endif %}
+           </td>
+           <td>₹ {{order.orderTotal}}</td>
+           <td>{{order.date}}</td>
+           <td><a href="/orders/{{ order.id }}/" class="btn btn-link">Details</a></td>
+         </tr>
+  {% endfor %}
+        </tbody>
+     </table>
+  {% else %}
+  <h5>No Orders</h5>
+  {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block body %}
+
+	<div class="card mx-auto" style="width: 40rem;">
+		<div class="card-header">
+      <img class="card-img-top" src="{% static 'images/kjsieit-logo.svg' %}" alt="Card image cap">
+      <p></p>
+		<h4>Confirm Order:</h4>
+		</div>
+		<div class="card-body">
+      <table class="table">
+         <thead>
+           <tr>
+             <th>Item</th>
+             <th>Quantity</th>
+             <th>Cost</th>
+           </tr>
+         </thead>
+         <tbody>
+    {% for cartItem in existingCart %}
+           <tr>
+             <td>{{cartItem.item}}</td>
+             <td>{{cartItem.quantity}}</td>
+             <td>₹ {{cartItem.total}}</td>
+           </tr>
+    {% endfor %}
+          <tr>
+            <td></td>
+            <td><strong>Billing Amount </strong></td>
+            <td>₹ {{totalBill}}</td>
+          </tr>
+          </tbody>
+       </table>
+       <form action="http://127.0.0.1:8000/orderSuccess" method="POST">
+           {% csrf_token %}
+         <script
+             src="https://checkout.razorpay.com/v1/checkout.js"
+             data-key="rzp_test_sS7jXvhuRTS0eV"
+             data-currency="INR"
+             data-buttontext="Make Payment"
+             data-description="{{PaymentData.desc}}"
+             data-image="{{PaymentData.pImgUrl}}"
+             data-theme.color="#F37254"
+             data-key="rzp_test_sS7jXvhuRTS0eV"
+             data-amount="{{PaymentData.total_amount}}"
+             data-name="{{PaymentData.item_name}}"
+             data-prefill.name="{{PaymentData.username}}"
+             data-prefill.email="gaurav.kumar@example.com"
+             data-prefill.contact="9999999999"
+             data-order_id="{{PaymentData.order_id}}"
+         ></script>
+         <input type="hidden" custom="Hidden Element" name="hidden">
+         </form>
+			</div>
+		</div>
+{% endblock %}

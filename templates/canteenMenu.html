@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block body %}
+
+  <div class="row">
+      {% if products %}
+      <div class="col-12">
+      <h1>Select Items!</h1>
+      </div>
+      {% for product in products %}
+      <div class="col-6">
+      <div class="container-fluid">
+        <div class="row">
+        <div class="col-12 mt-3">
+            <div class="card">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img class="" src="/media/{{ product.product_image }}" alt="Card image cap" height="200px" width="200px">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ product.product_name }}</h4>
+                        {% if product.product_available %}
+                          <p class="card-text">Available</p>
+                        {% else %}
+                          <p class="card-text">Not Available</p>
+                        {% endif %}
+                        <h5 class="card-text">₹{{ product.product_cost }}<h5>
+                        {% if user.is_staff %}
+                          <a href="/editProduct/{{ product.id }}/" class="btn btn-primary">Edit Product</a>
+                        {% else %}
+                          <a href="/addToCart/{{ product.id }}/" class="btn btn-primary">Add to Cart</a>
+                          <!-- <a href="/menu/{{ product.id }}/" class="btn btn-primary">Buy</a> -->
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+
+      {% endfor %}
+
+      {% else %}
+
+      <p>NO ITEMS FOUND</p>
+
+      {% endif %}
+
+</div>
+
+{% endblock %}
