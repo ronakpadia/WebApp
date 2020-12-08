@@ -21,11 +21,11 @@ class ProductList(ListView):
 
 # Create your views here.
 def index(request):
-    userList = UserProfileInfo.objects.all()
-    for user in userList:
-        print(user.profile_pic)
-    userDict = {'users': userList}
-    return render(request, 'index.html', userDict)
+#     userList = UserProfileInfo.objects.all()
+#     for user in userList:
+#         print(user.profile_pic)
+#     userDict = {'users': userList}
+    return render(request, 'index.html')
 
 @login_required
 def add_product(request):
