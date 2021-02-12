@@ -40,6 +40,7 @@ urlpatterns = [
     re_path(r'^orderSuccess', views.OrderSuccess, name='orderSuccess'),
     re_path(r'^orders/(?P<oid>\w{0,50})/$', views.OrderDesc, name='OrderDesc'),
     re_path(r'^editOrder/(?P<oid>\w{0,50})/$', views.getOrder, name='getOrder'),
+    path('website', views.website, name='website'),
     # re_path(r'^orders/update/(?P<oid>\w{0,50})/$', views.getOrder, name='getOrder'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
