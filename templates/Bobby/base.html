@@ -15,9 +15,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Projects</a>
-        <a class="nav-link" href="#">Employees</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link" href="{% url 'project' %}">Projects</a>
+        <a class="nav-link" href="{% url 'website' %}">Employees</a>
+        {% comment %} <a class="nav-link" href="{% url 'statistics' %}">Statistics</a> {% endcomment %}
       </div>
     </div>
   </div>

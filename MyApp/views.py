@@ -16,6 +16,9 @@ import json
 def website(request):
     return render(request, 'Bobby/home.html')
 
+def project(request):
+    return render(request, 'Bobby/project.html')
+
 class ProductList(ListView):
     model = Product
 

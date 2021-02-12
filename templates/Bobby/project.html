@@ -1,0 +1,79 @@
+{% extends "Bobby/base.html" %}
+
+{% block "content" %}
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label>Search a Project:</label>
+            <input class="form-control" type="text" placeholder="Enter Project Name"> 
+            <button type="button" class="btn btn-primary btn-sm">Search</button>
+        </div>
+        <div class="col">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            + Add Project
+                </a>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <label>Project Name: </label>
+                    <input class="form-control" type="text" placeholder="Project Name"> 
+                    <label>Project Description: </label>
+                    <input class="form-control" type="text" placeholder="Project Description">
+                    <button class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col">
+            <h4>Reliance Project</h4>
+            <p>White Props project at location Mumbai</p>      
+            <br/>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Card No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Shift</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Payment Status</th>
+                    <th scope="col">Work</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">332</th>
+                        <td>Josh Mascarhenas</td>
+                        <td>1</td>
+                        <td>Rs. 700</td>
+                        <td class="text-danger">Unpaid</td>
+                        <td>Camera</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">213</th>
+                        <td>Sumit Patil</td>
+                        <td>2</td>
+                        <td>Rs. 2000</td>
+                        <td class="text-success">Paid</td>
+                        <td>Assistant</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">256</th>
+                        <td>Jyotsna Patel</td>
+                        <td>1</td>
+                        <td>Rs. 700</td>
+                        <td class="text-danger">Unpaid</td>
+                        <td>Creative</td>
+                    </tr>
+                    <tr>
+                        <th colspan="4" scope="row">Total Amount Pending:</th>
+                        <td colspan="3">Rs. 700</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
