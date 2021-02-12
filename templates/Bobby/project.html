@@ -9,23 +9,6 @@
             <input class="form-control" type="text" placeholder="Enter Project Name"> 
             <button type="button" class="btn btn-primary btn-sm">Search</button>
         </div>
-        <div class="col-5">
-                {% comment %} <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            + Add Project
-                </a> {% endcomment %}
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    + Add Project
-                </button>
-            <div class="" id="collapseExample">
-                <div class="card card-body">
-                    <label>Project Name: </label>
-                    <input class="form-control" type="text" placeholder="Project Name"> 
-                    <label>Project Description: </label>
-                    <input class="form-control" type="text" placeholder="Project Description">
-                    <button class="btn btn-primary">Add</button>
-                </div>
-            </div>
-        </div>
     </div>
     <br/>
     <div class="row">
@@ -75,6 +58,26 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-5">
+                {% comment %} <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            + Add Project
+                </a> {% endcomment %}
+                {% comment %} <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    + Add Project
+                </button> {% endcomment %}
+            <div class="" id="collapseExample">
+                <div class="card card-body">
+                    <h5>Add Project </h5>
+                    <label>Project Name: </label>
+                    <input class="form-control" type="text" placeholder="Project Name"> 
+                    <label>Project Description: </label>
+                    <input class="form-control" type="text" placeholder="Project Description">
+                    <button class="btn btn-primary">Add</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
