@@ -13,11 +13,11 @@ from django.views.generic import ListView
 import razorpay
 import json
 
-
+def website(request):
+    return render(request, 'Bobby/home.html')
 
 class ProductList(ListView):
     model = Product
-
 
 # Create your views here.
 def index(request):

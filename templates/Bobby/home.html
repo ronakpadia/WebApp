@@ -1,0 +1,76 @@
+{% extends "Bobby/base.html" %}
+
+{% block "content" %}
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <label>Search an Employee: </label>
+            <input class="form-control" type="text" placeholder="Search by name or card No">
+            <button type="button" class="btn btn-primary btn-sm">Search</button>
+        </div>
+        <div class="col">
+            <label>Search a Project:</label>
+            <input class="form-control" type="text" placeholder="Enter Project Name"> 
+            <button type="button" class="btn btn-primary btn-sm">Search</button>
+        </div>
+        <div class="col">
+            <label>Search a Date:</label>
+            <input type="date" class="form-control" placeholder="Date"> 
+            <button type="button" class="btn btn-primary btn-sm">Search</button>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col">
+            <h4>Sudhir Mishra</h4>
+            <h5>Card No. 212 </h5>
+            <h5>Base Rate:<span class="text-success">Rs. 700</span></h5>        
+            <br/>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Project</th>
+                    <th scope="col">Work</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Payment Status</th>
+                    <th scope="col">Shift</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">10/05/2020</th>
+                        <td>Reliance</td>
+                        <td>Creative</td>
+                        <td>Rs. 700</td>
+                        <td class="text-danger">Unpaid</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9/05/2020</th>
+                        <td>Reliance</td>
+                        <td>Camera</td>
+                        <td>Rs. 1400</td>
+                        <td class="text-success">Paid</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8/05/2020</th>
+                        <td>Reliance</td>
+                        <td>Assistant</td>
+                        <td>Rs. 700</td>
+                        <td class="text-success">Paid</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th colspan="4" scope="row">Total Amount Pending:</th>
+                        <td colspan="3">Rs. 700</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
